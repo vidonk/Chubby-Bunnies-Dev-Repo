@@ -1,23 +1,21 @@
 #include "main.h"// test test test test
 #include "pros/abstract_motor.hpp" // test test test test 
 
-bool buttonr2pressed = false;
+bool buttonR2pressed = false;
 
-pros::Motor slapper(10, pros::v5::MotorGears::red, pros::v5::MotorUnits::degrees);
+pros::Motor slapper(16, pros::v5::MotorGears::red, pros::v5::MotorUnits::degrees);
 
-pros::Motor motor (1,pros::v5::MotorGears::red, pros::v5::MotorUnits::degrees);
-
-int slapperState =0;
+int slapperState = 0;
 
 void updateslapper () {
 if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2)) {
-    if (!buttonr2pressed) {
+    if (!buttonR2pressed) {
 
-        buttonr2pressed = true;
+        buttonR2pressed = true;
 
-        if(slapperState == 0 || slapperState == 2){
-            slapperState=1;
-            slapper.move_voltage(-6000);
+        if(slapperState == 0){
+            slapperState = 1;
+            slapper.move_voltage(12000);
 
         }else if (slapperState == 1) {
             slapperState = 0;
@@ -27,6 +25,6 @@ if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2)) {
 }
 else{
 
-    buttonr2pressed = false;
+    buttonR2pressed = false;
     }
-}
+} 

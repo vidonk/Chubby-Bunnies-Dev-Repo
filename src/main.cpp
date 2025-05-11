@@ -1,8 +1,10 @@
 #include "lemlib/api.hpp" // IWYU pragma: keep
 #include "main.h"// test test test test
+#include "subsystems/intake.hpp"
+#include "subsystems/slapper.hpp" //added this today 
 
 pros::MotorGroup left_motors({-12,-7,-10}, pros::MotorGearset::blue); // keep one side all negative
-pros::MotorGroup right_motors({9,4,5}, pros::MotorGearset::blue);
+pros::MotorGroup right_motors({9,16,5}, pros::MotorGearset::blue);
 						
 // Inertial Sensor on port 10
 pros::Imu imu(10);
@@ -168,7 +170,8 @@ void opcontrol() {
 
         // move the robot
         chassis.tank(leftY, rightY);
-
+        updateintake();
+        updateslapper();
         // delay to save resources
         pros::delay(25);
 	}
