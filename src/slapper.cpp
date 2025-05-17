@@ -15,7 +15,7 @@ if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2)) {
 
         if(slapperState == 0){
             slapperState = 1;
-            slapper.move_voltage(12000);
+            slapper.move_voltage(10000);
 
         }else if (slapperState == 1) {
             slapperState = 0;

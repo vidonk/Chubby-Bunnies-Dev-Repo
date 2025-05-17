@@ -3,8 +3,8 @@
 #include "subsystems/intake.hpp"
 #include "subsystems/slapper.hpp" //added this today 
 
-pros::MotorGroup left_motors({-12,-7,-10}, pros::MotorGearset::blue); // keep one side all negative
-pros::MotorGroup right_motors({9,16,5}, pros::MotorGearset::blue);
+pros::MotorGroup left_motors({-12,-8,-9}, pros::MotorGearset::blue); // keep one side all negative
+pros::MotorGroup right_motors({10,7,3}, pros::MotorGearset::blue);
 						
 // Inertial Sensor on port 10
 pros::Imu imu(10);
