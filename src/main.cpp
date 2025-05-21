@@ -3,8 +3,8 @@
 #include "subsystems/intake.hpp"
 #include "subsystems/slapper.hpp" //added this today 
 
-pros::MotorGroup left_motors({-12,-8,-9}, pros::MotorGearset::blue); // keep one side all negative
-pros::MotorGroup right_motors({10,7,3}, pros::MotorGearset::blue);
+pros::MotorGroup left_motors({-18,-19,-20}, pros::MotorGearset::blue); // keep one side all negative
+pros::MotorGroup right_motors({3,5,7}, pros::MotorGearset::blue);
 						
 // Inertial Sensor on port 10
 pros::Imu imu(10);
@@ -166,10 +166,10 @@ void opcontrol() {
     while (true) {
         // get left y and right y positions
         int leftY = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
-        int rightY = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y);
+        int rightX = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
 
         // move the robot
-        chassis.tank(leftY, rightY);
+        chassis.arcade(leftY, rightX);
         updateintake();
         updateslapper();
         // delay to save resources

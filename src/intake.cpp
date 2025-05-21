@@ -1,6 +1,6 @@
 #include "main.h"// test test test test test test test 
 
-pros:: Motor intake (4, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees); //setting the motor (4 is the intake port)
+pros:: Motor intake (17, pros::v5::MotorGears::green, pros::v5::MotorUnits::degrees); //setting the motor (4 is the intake port)
 
 bool buttonl1Pressed = false;
 bool buttonl2Pressed = false;

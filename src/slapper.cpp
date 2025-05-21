@@ -3,7 +3,7 @@
 
 bool buttonR2pressed = false;
 
-pros::Motor slapper(16, pros::v5::MotorGears::red, pros::v5::MotorUnits::degrees);
+pros::Motor slapper(6, pros::v5::MotorGears::red, pros::v5::MotorUnits::degrees);
 
 int slapperState = 0;
 
